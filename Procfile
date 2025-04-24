@@ -1,0 +1,1 @@
+web: gunicorn itgs_site.wsgi
