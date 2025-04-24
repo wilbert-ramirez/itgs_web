@@ -2,8 +2,11 @@ from django.shortcuts import render
 from django.http import JsonResponse
 import json
 
+from django.conf import settings
 import os
-print("📂 STATIC_ROOT CONTENTS:", os.listdir(BASE_DIR / "staticfiles/core"))
+
+print("📂 staticfiles dir:", settings.STATIC_ROOT)
+print("📂 Contenido:", os.listdir(settings.STATIC_ROOT))
 
 def index(request):
     return render(request, 'core/index.html')
