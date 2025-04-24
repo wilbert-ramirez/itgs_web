@@ -5,8 +5,11 @@ import json
 from django.conf import settings
 import os
 
-print("📂 staticfiles dir:", settings.STATIC_ROOT)
-print("📂 Contenido:", os.listdir(settings.STATIC_ROOT))
+static_path = os.path.join(settings.STATIC_ROOT, "core")
+if os.path.exists(static_path):
+    print("📂 STATIC_ROOT/core:", os.listdir(static_path))
+else:
+    print("🚫 No existe STATIC_ROOT/core:", static_path)
 
 def index(request):
     return render(request, 'core/index.html')
