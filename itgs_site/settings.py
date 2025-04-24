@@ -3,6 +3,10 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "core/static"]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'insecure-default')
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '*').split(',')
@@ -60,10 +64,6 @@ LANGUAGE_CODE = 'es-es'
 TIME_ZONE = 'America/Costa_Rica'
 USE_I18N = True
 USE_TZ = True
-
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "core/static"]
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
