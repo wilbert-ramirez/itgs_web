@@ -7,6 +7,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "core/static"]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'insecure-default')
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '*').split(',')
